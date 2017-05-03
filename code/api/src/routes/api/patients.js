@@ -1,5 +1,5 @@
+import patients from '../../data/patients';
+
 export default (req, res) => {
-  res.json([
-    {name: 'Josh'},
-  ]);
+  res.json(patients);
 };
