@@ -1,7 +1,9 @@
 /* Taken from the npm package truefit-react-utils */
-
 import _ from 'lodash';
 import axios from 'axios';
+
+import offline from './offline';
+import {GET, POST, PUT, DELETE} from './constants';
 
 class HttpFactory {
   create() {
@@ -15,6 +17,7 @@ class HttpFactory {
   }
 }
 
+// internal
 const httpFactory = new HttpFactory();
 
 // configure externally
@@ -24,13 +27,13 @@ export const configureHttp = config => {
 
 // verbs
 export const get = (url, params) =>
-  httpFactory.create().get(url, {params});
+  offline({factory: httpFactory, method: GET, url, params});
 
 export const post = (url, data) =>
-  httpFactory.create().post(url, data);
+  offline({factory: httpFactory, method: POST, url, data});
 
 export const put = (url, data) =>
-  httpFactory.create().put(url, data);
+  offline({factory: httpFactory, method: PUT, url, data});
 
 export const httpDelete = (url, params) =>
-  httpFactory.create().delete(url, {params});
+  offline({factory: httpFactory, method: DELETE, url, params});

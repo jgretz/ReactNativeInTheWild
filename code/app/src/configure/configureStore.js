@@ -2,11 +2,14 @@ import {createStore, compose, applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import promiseMiddleware from 'redux-promise-middleware';
 import {composeWithDevTools} from 'remote-redux-devtools';
+
 import rootReducer from '../rootReducer';
 
 const createDevStore = middleware => {
-  const composeEnhancers = composeWithDevTools({realtime: true});
-  const store = createStore(rootReducer, composeEnhancers(applyMiddleware(...middleware)));
+  const devCompose = composeWithDevTools({realtime: true});
+  const store = createStore(rootReducer, devCompose(
+    applyMiddleware(...middleware),
+  ));
 
   if (module.hot) {
     // Enable hot module replacement for reducers
