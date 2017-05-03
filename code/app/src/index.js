@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Provider} from 'react-redux';
 
 import {configureStore, configureHttp} from './configure';
-import {List} from './features/patient/components';
+import {Loading} from './features/shared/components';
 
 // boot
 const store = configureStore();
@@ -13,7 +13,7 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <List />
+        <Loading />
       </Provider>
     );
   }
