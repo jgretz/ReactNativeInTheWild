@@ -2,7 +2,7 @@
 import _ from 'lodash';
 import axios from 'axios';
 
-import offline from './offline';
+import {offline} from './offline';
 import {GET, POST, PUT, DELETE} from './constants';
 
 class HttpFactory {

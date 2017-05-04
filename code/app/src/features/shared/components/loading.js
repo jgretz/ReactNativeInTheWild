@@ -3,14 +3,15 @@ import {View, Text} from 'react-native';
 import {connect} from 'react-redux';
 
 import styles from '../../../styles';
-
-import {loadPatients} from '../../patient/actions';
-import {loadPrescriptions} from '../../prescription/actions';
+import {loadApp} from '../actions';
 
 class Loading extends Component {
+  static navigationOptions = {
+    header: null,
+  };
+
   componentWillMount() {
-    this.props.loadPatients();
-    this.props.loadPrescriptions();
+    this.props.loadApp();
   }
 
   render() {
@@ -22,4 +23,4 @@ class Loading extends Component {
   }
 }
 
-export default connect(null, {loadPatients, loadPrescriptions})(Loading);
+export default connect(null, {loadApp})(Loading);

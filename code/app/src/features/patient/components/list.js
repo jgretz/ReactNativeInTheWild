@@ -1,9 +1,19 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {View, Text} from 'react-native';
 
-export default () =>
-(
-  <View>
-    <Text>Hello World</Text>
-  </View>
-);
+class List extends Component {
+  static navigationOptions = {
+    title: 'Patient List',
+  };
+
+  render() {
+    return (
+      <View>
+        <Text>Hello Patients</Text>
+      </View>
+    );
+  }
+}
+
+export default connect()(List);

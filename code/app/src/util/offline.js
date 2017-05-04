@@ -1,6 +1,8 @@
 import {NetInfo} from 'react-native';
 import {GET, POST, PUT, DELETE} from './constants';
+import {log} from './log';
 
+// watch connectivity
 let isOnline = false;
 const handleConnectivityChange = online => {
   isOnline = online;
@@ -8,6 +10,7 @@ const handleConnectivityChange = online => {
 
 NetInfo.addEventListener('change', handleConnectivityChange);
 
+// execute request
 const executeRequest = request => {
   const {factory, method, url, params, data} = request;
 
@@ -22,12 +25,12 @@ const executeRequest = request => {
   return map[method]();
 };
 
-export default request => {
+export const offline = request => {
   if (isOnline) {
-    console.log('Online');
+    log('Online');
     return executeRequest(request);
   }
 
-  console.log('Offline');
+  log('Offline');
   return Promise.reject();
 };
