@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {View, Text} from 'react-native';
+import {View, ListView} from 'react-native';
+
+import containerStyles from '../../../styles/container';
+import listViewStyles from '../../../styles/listView';
+
+import listItem from './listItem';
+import {patientListViewDataSourceSelector} from '../selectors';
 
 class List extends Component {
   static navigationOptions = {
@@ -9,11 +15,19 @@ class List extends Component {
 
   render() {
     return (
-      <View>
-        <Text>Hello Patients</Text>
+      <View style={containerStyles.container}>
+        <ListView
+          style={listViewStyles.list}
+          dataSource={this.props.dataSource}
+          renderRow={listItem}
+          pageSize={22} />
       </View>
     );
   }
 }
 
-export default connect()(List);
+const mapStateToProps = state => ({
+  dataSource: patientListViewDataSourceSelector(state),
+});
+
+export default connect(mapStateToProps)(List);

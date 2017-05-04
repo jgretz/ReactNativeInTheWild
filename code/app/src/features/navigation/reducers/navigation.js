@@ -21,6 +21,7 @@ const nextState = (state, action) => {
         ],
       }), state);
 
+    case 'Navigation/BACK':
     case POP:
       return Navigator.router.getStateForAction(NavigationActions.back(), state);
   }

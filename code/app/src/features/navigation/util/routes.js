@@ -1,6 +1,6 @@
 import {Loading} from '../../shared/components';
 import {List as PatientList} from '../../patient/components';
-import {PrescriptionListForPatient} from '../../prescription/components';
+import {List as PrescriptionListForPatient} from '../../prescription/components';
 
 // route names
 export const LOADING = 'LOADING';

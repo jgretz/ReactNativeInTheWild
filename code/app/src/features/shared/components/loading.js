@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import {View, Text} from 'react-native';
 import {connect} from 'react-redux';
 
-import styles from '../../../styles';
+import containerStyles from '../../../styles/container';
+import loadingStyles from '../styles/loading';
+
 import {loadApp} from '../actions';
 
 class Loading extends Component {
@@ -16,8 +18,8 @@ class Loading extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.loading}>Loading ...</Text>
+      <View style={containerStyles.container}>
+        <Text style={loadingStyles.loading}>Loading ...</Text>
       </View>
     );
   }
