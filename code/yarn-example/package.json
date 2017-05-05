@@ -1,0 +1,59 @@
+{
+	"name": "app",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"test": "jest",
+		"generateIndexFiles": "npm-run-all --parallel generateActionIndexFiles generateComponentIndexFiles generateServiceIndexFiles generateSelectorIndexFiles generateUtilIndexFiles generateReducerIndexFiles",
+		"generateActionIndexFiles": "babel-node tools/generateActionIndexFiles.js",
+		"generateComponentIndexFiles": "babel-node tools/generateComponentIndexFiles.js",
+		"generateServiceIndexFiles": "babel-node tools/generateServiceIndexFiles.js",
+		"generateSelectorIndexFiles": "babel-node tools/generateSelectorIndexFiles.js",
+		"generateUtilIndexFiles": "babel-node tools/generateUtilIndexFiles.js",
+		"generateReducerIndexFiles": "babel-node tools/generateReducerIndexFiles.js",
+		"generateRootReducer": "babel-node tools/generateRootReducer.js",
+		"generateFiles": "npm-run-all --parallel generateIndexFiles generateRootReducer"
+	},
+	"dependencies": {
+		"axios": "^0.16.1",
+		"class-autobind": "^0.1.4",
+		"immutable": "^3.8.1",
+		"lodash": "^4.17.4",
+		"moment": "^2.18.1",
+		"numeral": "^2.0.4",
+		"pluralize": "^4.0.0",
+		"react": "16.0.0-alpha.6",
+		"react-native": "0.44.0",
+		"react-native-clean-form": "^0.4.1",
+		"react-native-vector-icons": "^4.0.1",
+		"react-navigation": "^1.0.0-beta.9",
+		"react-redux": "^5.0.3",
+		"redux": "^3.6.0",
+		"redux-devtools-extension": "^2.13.0",
+		"redux-form": "^6.6.0",
+		"redux-persist": "^4.8.0",
+		"redux-promise-middleware": "^4.2.0",
+		"redux-thunk": "^2.2.0",
+		"remote-redux-devtools": "^0.5.7",
+		"reselect": "^3.0.0"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.24.1",
+		"babel-core": "^6.24.1",
+		"babel-eslint": "^7.2.3",
+		"babel-jest": "19.0.0",
+		"babel-preset-react-native": "1.9.1",
+		"eslint": "^3.19.0",
+		"eslint-plugin-import": "^2.0.1",
+		"eslint-plugin-react": "^6.2.0",
+		"jest": "19.0.2",
+		"node-dir": "^0.1.16",
+		"npm-run-all": "^4.0.2",
+		"react-test-renderer": "16.0.0-alpha.6",
+		"rimraf": "^2.6.1"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
+}

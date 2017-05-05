@@ -51,9 +51,13 @@
 		"node-dir": "^0.1.16",
 		"npm-run-all": "^4.0.2",
 		"react-test-renderer": "16.0.0-alpha.6",
+		"redux-mock-store": "^1.2.3",
 		"rimraf": "^2.6.1"
 	},
 	"jest": {
-		"preset": "react-native"
+		"preset": "react-native",
+		"setupFiles": [
+			"./jest/setup.js"
+		]
 	}
 }
