@@ -28,7 +28,7 @@ class Login extends Component {
       return <TextInput style={loginStyles.input} onChangeText={onChange} {...restInput} secureTextEntry />;
     }
 
-    return <TextInput style={loginStyles.input} onChangeText={onChange} {...restInput} />;
+    return <TextInput style={loginStyles.input} onChangeText={onChange} {...restInput} autoCapitalize="none" />;
   }
 
   render() {

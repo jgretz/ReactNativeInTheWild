@@ -20,7 +20,8 @@ class List extends Component {
           style={listViewStyles.list}
           dataSource={this.props.dataSource}
           renderRow={listItem}
-          pageSize={22} />
+          pageSize={22}
+          enableEmptySections />
       </View>
     );
   }

@@ -18,6 +18,8 @@ export default StyleSheet.create({
 
     borderWidth: 1,
     padding: 10,
+
+    backgroundColor: '#fff',
   },
   button: {
     fontSize: 20,

@@ -6,11 +6,13 @@ import containerStyles from '../../../styles/container';
 import listViewStyles from '../../../styles/listView';
 
 import listItem from './listItem';
+import {LogoutButton} from '../../shared/components';
 import {patientListViewDataSourceSelector} from '../selectors';
 
 class List extends Component {
   static navigationOptions = {
     title: 'Patient List',
+    headerRight: <LogoutButton />,
   };
 
   render() {
