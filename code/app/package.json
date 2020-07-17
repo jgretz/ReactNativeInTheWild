@@ -19,7 +19,7 @@
 		"axios": "^0.16.1",
 		"class-autobind": "^0.1.4",
 		"immutable": "^3.8.1",
-		"lodash": "^4.17.4",
+		"lodash": "^4.17.19",
 		"moment": "^2.18.1",
 		"numeral": "^2.0.4",
 		"pluralize": "^4.0.0",
